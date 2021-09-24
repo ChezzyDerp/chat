@@ -1,0 +1,14 @@
+
+.Message{
+    width: 100%;
+    padding: 0 10px;
+    text-align: center;
+    border: 1px solid rgb(233, 233, 233);
+    overflow-wrap: break-word;
+    
+}
+.Message p{
+    margin: 0;
+    padding: 16px 0;
+}
+

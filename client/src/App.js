@@ -1,16 +1,19 @@
 import './App.css';
 import socket from './socket'
-import React, { useEffect } from 'react'
+import React, { useEffect, useState } from 'react'
 import reducer from './reducer'
 import axios from 'axios'
-
+import Message from './components/Message/Message';
 
 
 
 function App() {
 
-  const message = React.createRef()
+  const styles = ['red', 'blue', 'yellow']
+  let [message, setMessage] = useState('')
 
+
+  
   let [state,dispath] = React.useReducer(reducer, {
     messages:[]
   })
@@ -34,18 +37,23 @@ function App() {
   return (
     <div className="App">
 
-      <input ref={message}/>
-      <button onClick={() =>{
-        socket.emit('sendMesage', message.current.value)
+     
+      <div className='Messages'>
+        {state.messages.map((m) =>{ 
+          return <Message          
+          message={m}/>
+        })}
+      </div>
+      <div className='wrapInput'>
+      <textarea value={message} onChange={(e) => setMessage(e.target.value)} className="Input" />
+
+      <button  onClick={() =>{
+        socket.emit('sendMesage', message)
+        setMessage('')
       }}>
         Send
       </button>
-
-      {state.messages.map((m) =>{ 
-        return <p>{m}</p>
-      })}
-      
-      
+      </div>
     </div>
   );
 }
