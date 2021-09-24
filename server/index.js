@@ -13,8 +13,8 @@ const port = 5000
 
 let messages = ['mess1', 'mess2']
 
-app.get('/', (req, resp) => {
-  resp.send('123')
+app.get('/get_messages', (req, resp) => {
+  resp.send(messages)
 });
 
 
