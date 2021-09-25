@@ -5,9 +5,8 @@ const Message = (props) =>{
     return (
         <div className={style.Message}>
 
-
-            <p >{props.message}</p> 
-
+            <p>{props.data.name}:</p>
+            <p >{props.data.message}</p> 
 
 
             

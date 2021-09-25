@@ -11,7 +11,17 @@ const io = new Server(server);
 const port = 5000
 
 
-let messages = ['mess1', 'mess2']
+let messages = [{
+  
+  name:'Ivan',
+  message:'gnidass'
+
+},{
+  
+  name:'Danila',
+  message:'noize'
+
+}]
 
 app.get('/get_messages', (req, resp) => {
   resp.send(messages)
