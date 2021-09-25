@@ -54,7 +54,7 @@ function App() {
       <button  onClick={() =>{
         
         socket.emit('sendMesage' , {name: name.current.value, message : message} )
-        setMessage()
+        setMessage('')
       }}>
         Send
       </button>
