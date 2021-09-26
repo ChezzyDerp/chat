@@ -46,9 +46,9 @@ const Chat = (props) =>{
         })}
       </div>
       <div className='wrapInput'>
-      <textarea class="form-control textARR" placeholder="message" value={message} onChange={(e) => setMessage(e.target.value)} className="Input" />
+      <textarea className="form-control textARR" placeholder="message" value={message} onChange={(e) => setMessage(e.target.value)}  />
 
-      <input  value='Отправить' class="btn btn-primary BtnSend"  onClick={() =>{
+      <input  value='Отправить' class="btn btn-primary"  onClick={() =>{
         if (!name.current.value || !message){
           alert('Одно из полей не заполненно!')
         }else{
