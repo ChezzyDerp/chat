@@ -19,11 +19,7 @@
 }
 
 
-.Input{
-    width: 100%;
-    
-    resize: none;
-}
+
 button{
     background-color: rgb(245, 245, 245);
     color: rgb(42, 48, 41);
@@ -31,7 +27,18 @@ button{
     font-weight: 700;
 }
 .wrapInput{
+    margin-top: 15px;
     width: 85%;
     height: 15vh;
     display: flex;
+    gap:1vw;
+}
+.textARR{
+    resize: none;
+}
+.nameForm{
+    width: 15%;
+}
+.BtnSend{
+    width: 10%;
 }

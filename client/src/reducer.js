@@ -7,6 +7,9 @@ const reducer = (state, action) =>{
         case ('ADD_MESSAGE'):
             return {...state, messages: [...state.messages, action.message] }
 
+        case ('SET_IS_AUTH'):
+            return {...state, isAuth: action.payload}
+
         default:
             return state
         
