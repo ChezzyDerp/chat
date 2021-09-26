@@ -4,20 +4,28 @@ import axios from 'axios'
 import Message from '../Message/Message';
 import socket from '../../socket'
 
+function getCookie(name) {
 
+  let matches = document.cookie.match(new RegExp(
+    "(?:^|; )" + name.replace(/([\.$?*|{}\(\)\[\]\\\/\+^])/g, '\\$1') + "=([^;]*)"
+  ));
+  return matches ? decodeURIComponent(matches[1]) : undefined;
+}
 
 const Chat = (props) =>{
 
     const styles = ['red', 'blue', 'yellow']
     let [message, setMessage] = useState('')
-    const name = createRef()
 
-  
+    
     
     
     useEffect(() =>{
         
         let messages = []
+        let name = getCookie('name')
+        props.dispath({type:'SET_IS_AUTH',payload:true, name:name})
+
 
         axios.get('/get_messages').then((resp) =>{
         messages = resp.data
@@ -41,25 +49,25 @@ const Chat = (props) =>{
         {props.state.messages.map((m) =>{ 
           
           return <Message  
-          data={m}/>
+          data={m} key={1}/>
           
         })}
       </div>
       <div className='wrapInput'>
-      <textarea className="form-control textARR" placeholder="message" value={message} onChange={(e) => setMessage(e.target.value)}  />
+        <textarea className="form-control textARR" placeholder="message" value={message} onChange={(e) => setMessage(e.target.value)}  />
 
-      <input  value='Отправить' class="btn btn-primary"  onClick={() =>{
-        if (!name.current.value || !message){
-          alert('Одно из полей не заполненно!')
-        }else{
-          socket.emit('sendMesage' , {name: name.current.value, message : message} )
-          setMessage('')
-        }
-       
-      }}>
-        
-      </input>
-        <input className="form-control nameForm"  ref={name} placeholder="name"></input>
+        <input  value='Отправить' class="btn btn-primary"  onClick={() =>{
+            if (!message){
+              alert('Поле сообщения пусто!')
+            }else{
+              socket.emit('sendMesage' , {name: props.state.name, message : message} )
+              setMessage('')
+            }
+          
+          }}>
+          
+        </input>
+          
       </div>
     </div>
   );

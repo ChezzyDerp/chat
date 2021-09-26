@@ -20,25 +20,16 @@ const io = new Server(server);
 const port = 5000
 
 
-let messages = [{
-  
-  name:'Ivan',
-  message:'gnidass'
-
-},{
-  
-  name:'Danila',
-  message:'noize'
-
-}]
+let messages = []
 
 app.get('/get_messages', (req, resp) => {
   resp.send(messages)
 });
 
 app.post('/auth', (req, resp) =>{
-  if(req.body.password == 'd5h9BM'){
+  if(req.body.password == 'zatonnoe'){
     resp.cookie('isAuth', true)
+    resp.cookie('name', req.body.name)
     resp.send()
   }else{
     resp.send(201)

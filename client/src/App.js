@@ -1,12 +1,9 @@
 import './App.css';
-import socket from './socket'
-import React, { createRef, useEffect, useState } from 'react'
+import React from 'react'
 import reducer from './reducer'
-import axios from 'axios'
-import Message from './components/Message/Message';
 import {Chat} from './components/Chat/Chat';
-import {state} from './components/Chat/Chat'
 import Login from './components/Login/Login';
+import Header from './components/Header/Header';
 
 
 function App() {
@@ -14,14 +11,17 @@ function App() {
 
   let [state, dispath] = React.useReducer(reducer, {
     messages:[],
-    isAuth:false
+    isAuth:false,
+    name:null
   })  
 
   window.state = state
   return(
     <div>
 
-      {state.isAuth ? <Chat state={state} dispath={dispath}/> : <Login state={state} dispath={dispath}/> }
+      {state.isAuth 
+      ?<div className='wrapChat'><Header state={state} dispath={dispath}/><Chat state={state} dispath={dispath}/></div> 
+       : <Login state={state} dispath={dispath}/> }
 
      
     </div>

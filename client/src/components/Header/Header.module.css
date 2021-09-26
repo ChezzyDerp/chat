@@ -1,0 +1,9 @@
+.Header{
+    max-height: 10vh;
+    display: flex;
+    justify-content: space-between;
+}
+
+.Header div{
+    margin:2px 5px;
+}

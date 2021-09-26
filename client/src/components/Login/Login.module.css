@@ -10,3 +10,6 @@
     display: flex;
     gap: 5px;
 }
+.Input input{
+    margin: 5px 0;
+}

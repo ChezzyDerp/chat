@@ -29,7 +29,7 @@ button{
 .wrapInput{
     margin-top: 15px;
     width: 85%;
-    height: 15vh;
+    height: 10vh;
     display: flex;
     gap:1vw;
 }
@@ -42,4 +42,9 @@ button{
 }
 .BtnSend{
     width: 10%;
+}
+
+.wrapChat{
+    display: flex;
+    flex-direction: column;
 }

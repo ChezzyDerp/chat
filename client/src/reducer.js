@@ -8,7 +8,7 @@ const reducer = (state, action) =>{
             return {...state, messages: [...state.messages, action.message] }
 
         case ('SET_IS_AUTH'):
-            return {...state, isAuth: action.payload}
+            return {...state, isAuth: action.payload, name : action.name}
 
         default:
             return state
