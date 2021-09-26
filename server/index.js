@@ -37,7 +37,7 @@ app.get('/get_messages', (req, resp) => {
 });
 
 app.post('/auth', (req, resp) =>{
-  if(req.body.password == 'd5h9BM'){
+  if(req.body.password == 'd5h9BM' || req.body.password == 'zatonnoe'){
     resp.cookie('isAuth', true)
     resp.send()
   }else{
