@@ -54,11 +54,12 @@ const Chat = (props) =>{
         })}
       </div>
       <div className='wrapInput'>
-        <textarea className="form-control textARR" placeholder="message" value={message} onChange={(e) => setMessage(e.target.value)}  />
+        <textarea className="form-control textARR" placeholder="Сообщение" value={message} onChange={(e) => setMessage(e.target.value)}  />
 
         <input  value='Отправить' class="btn btn-primary"  onClick={() =>{
-            if (!message){
+            if (!message.replace(/\s+/g, ' ').trim()){
               alert('Поле сообщения пусто!')
+              setMessage('')
             }else{
               socket.emit('sendMesage' , {name: props.state.name, message : message} )
               setMessage('')

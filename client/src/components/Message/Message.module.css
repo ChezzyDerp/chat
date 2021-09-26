@@ -4,11 +4,26 @@
     padding: 0 10px;
     text-align: center;
     border: 1px solid rgb(233, 233, 233);
-    overflow-wrap: break-word;
-    
+    text-align: center;
+    margin: 5px 0;
 }
+
 .Message p{
     margin: 0;
-    padding: 16px 0;
+    text-align: center;
+   
 }
+.Message div{
+    text-align: center;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    height: 100%;
+}
+.message{
+    width: 100%;
+    border-left: 1px solid rgb(240, 240, 240);
+   
+}
+
 

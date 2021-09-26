@@ -28,6 +28,7 @@ button{
 }
 .wrapInput{
     margin-top: 15px;
+    margin-bottom: 15px;
     width: 85%;
     height: 10vh;
     display: flex;
@@ -37,9 +38,7 @@ button{
     resize: none;
     
 }
-.nameForm{
-    width: 15%;
-}
+
 .BtnSend{
     width: 10%;
 }

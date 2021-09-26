@@ -33,23 +33,18 @@ function deleteCookie(name) {
 
 const Header = (props) =>{
     return(
-        <div className={style.Header}>
-
-          <div>
-            <p>DuzbatChat</p>
-          </div>
-          <div> 
-              <input className="btn btn-primary" type="button" value="Выйти" onClick={() =>{
+        <nav className={`navbar navbar-light bg-light ${style.Header}`} >
+            
+            <a className="navbar-brand">DUZCHAT</a>
+            <form className="form-inline">
+            <input className="btn btn-primary" type="button" value="Выйти" onClick={() =>{
                   deleteCookie('name')
                   deleteCookie('isAuth')
                   props.dispath({type:'SET_IS_AUTH', payload:false, name:null})
               }}></input>
-        </div>
-         
-          
-
-
-        </div>
+            </form>
+        </nav>
+       
     )
 }
 

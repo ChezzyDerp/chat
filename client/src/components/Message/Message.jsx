@@ -4,9 +4,11 @@ import style from './Message.module.css'
 const Message = (props) =>{
     return (
         <div className={style.Message}>
-
-            <p>{props.data.name}:</p>
-            <p >{props.data.message}</p> 
+            <div>
+            <p className={style.name}>{props.data.name}:</p>
+            <p className={style.message}>{props.data.message}</p> 
+            </div>
+            
 
 
             

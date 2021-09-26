@@ -1,9 +1,20 @@
 .Header{
-    max-height: 10vh;
-    display: flex;
+    height: 9vh;
+    position:sticky;
+    top: 0;
     justify-content: space-between;
+    align-items: center;
+
+    text-align: center;
+    border-bottom: 1px solid lavender;
+    
 }
 
-.Header div{
-    margin:2px 5px;
+.Header *{
+    
+    margin:0 2%;
+}
+.Header input{
+    margin: 0;
+    padding: 4px 4px;
 }
