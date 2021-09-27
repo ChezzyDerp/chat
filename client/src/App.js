@@ -6,13 +6,15 @@ import Login from './components/Login/Login';
 import Header from './components/Header/Header';
 
 
+
 function App() {
 
 
   let [state, dispath] = React.useReducer(reducer, {
     messages:[],
     isAuth:false,
-    name:null
+    name:null,
+    avatar:null
   })  
 
   window.state = state

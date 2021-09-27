@@ -13,3 +13,8 @@
 .Input input{
     margin: 5px 0;
 }
+.Input img{
+    width: 75px;
+    height: 75px;
+    border-radius: 50%;
+}

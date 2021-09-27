@@ -17,6 +17,10 @@
     padding: 0 15px;
 
 }
+.Messages::-webkit-scrollbar {
+    width: 7px;
+    background-color: #f9f9fd;
+}
 
 
 

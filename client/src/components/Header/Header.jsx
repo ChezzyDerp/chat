@@ -1,6 +1,6 @@
 import style from './Header.module.css'
 
-function setCookie(name, value, options = {}) {
+export function setCookie(name, value, options = {}) {
 
     options = {
       path: '/',

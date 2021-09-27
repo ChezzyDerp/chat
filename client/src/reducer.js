@@ -8,8 +8,9 @@ const reducer = (state, action) =>{
             return {...state, messages: [...state.messages, action.message] }
 
         case ('SET_IS_AUTH'):
-            return {...state, isAuth: action.payload, name : action.name}
-
+            return {...state, isAuth: action.payload, name : action.name,avatar: action.avatar}
+        case ('SET_AVATAR'):
+            return {...state, avatar: action.avatar}
         default:
             return state
         
