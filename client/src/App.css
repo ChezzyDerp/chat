@@ -37,12 +37,21 @@ button{
     height: 10vh;
     display: flex;
     gap:1vw;
+    align-items: center;
+}
+.emoji-picker-react{
+    position: absolute;
+    top:1px;
 }
 .textARR{
     resize: none;
     
 }
-
+.pickerWrapper{
+    position: absolute;
+    bottom: 50px;
+    left: 25px;
+}
 .BtnSend{
     width: 10%;
 }
@@ -50,4 +59,7 @@ button{
 .wrapChat{
     display: flex;
     flex-direction: column;
+}
+.openSmileMenu{
+    border: none;
 }

@@ -3,6 +3,8 @@ import reducer from '../../reducer'
 import axios from 'axios'
 import Message from '../Message/Message';
 import socket from '../../socket'
+import {CgSmileNoMouth} from 'react-icons/cg'
+import Picker from 'emoji-picker-react';
 
 function getCookie(name) {
 
@@ -16,6 +18,12 @@ const Chat = (props) =>{
 
     const styles = ['red', 'blue', 'yellow']
     let [message, setMessage] = useState('')
+    const [chosenEmoji, setChosenEmoji] = useState(null);
+    const choseEmoj = createRef()
+    const onEmojiClick = (event, emojiObject) => {
+      setChosenEmoji(emojiObject);
+    };
+
 
     
     let messages = []
@@ -55,7 +63,20 @@ const Chat = (props) =>{
           
         })}
       </div>
+      <div className='pickerWrapper'>
+      <Picker   ref={choseEmoj} onEmojiClick={(event, emoji) =>{
+        setChosenEmoji(emoji)
+        
+        setMessage(message + chosenEmoji.emoji)
+        }} />
+      </div>
+      
       <div className='wrapInput'>
+        <button className='openSmileMenu' onClick={() =>{
+          document.getElementsByClassName('emoji-picker-react')[0].style.visibility == 'visible' ?
+          document.getElementsByClassName('emoji-picker-react')[0].style.visibility = 'hidden' :
+          document.getElementsByClassName('emoji-picker-react')[0].style.visibility = 'visible' 
+        }}  ><CgSmileNoMouth size={50} className='emojiInput'/></button>
         <textarea className="form-control textARR" placeholder="Сообщение" value={message} onChange={(e) => setMessage(e.target.value)}  />
 
         <button  value='Отправить' class="btn btn-primary"  onClick={() =>{

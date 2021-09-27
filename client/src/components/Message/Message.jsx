@@ -2,7 +2,7 @@
 import style from './Message.module.css'
 
 const Message = (props) =>{
-    console.log(props)
+    
     return (
         <div className={style.Message}>
             <div>
