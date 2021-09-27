@@ -1,4 +1,4 @@
-# React Chat * :fa-check:
+# React Chat 
 
 *This is my first project on React*
 
